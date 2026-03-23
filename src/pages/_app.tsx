@@ -14,13 +14,15 @@ export default function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     router.prefetch("/test");
-  }, []);
+  }, [router]);
 
   return (
     <>
       <header style={{ display: "flex", gap: 10 }}>
         <Link href={"/"}>Home</Link>
-        <Link href={"/search"}>Search</Link>
+        <Link href={"/search"} prefetch={false}>
+          Search
+        </Link>
         <Link href={"/book/1"}>Book</Link>
         <div>
           <button onClick={onClickButton}>/test 페이지 이동</button>
